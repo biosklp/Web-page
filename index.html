@@ -13,7 +13,7 @@
         </form>
     </div>
 <hr>
-<a href="https://zhaowujingyuan.github.io/Web-page/search/index.html">high起始页</a>
+<a href="https://zhaowujingyuan.github.io/Web-page/search/index.html">high起始页</a><br>
 <a href="https://zhaowujingyuan.github.io/Web-page/downloads.html">high软件商店</a><br>
 <a href="https://zhaowujingyuan.github.io/Web-page/ace/404.html">Html编辑器（失效）</a><br>
 <a href="https://zhaowujingyuan.github.io/Web-page/games.html">好van♂的</a><br>
@@ -24,4 +24,23 @@
 <a href="https://zhaowujingyuan.github.io/Web-page/coderain.html">CodeRain</a><br>
 <a href="http://highforum.diaries.ga/high"><button>high的论坛</button></a><br>
 <hr>
+<h3>每日一言</h3>
+<div id="hitokoto" class="hhh">
+  <span id="hitokoto">:D 获取中...</span> ——<span id="from"></span>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'https://v1.hitokoto.cn/?c=b');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      var data = JSON.parse(xhr.responseText);//获得字符串形式的响应数据。
+      var hitokoto = document.getElementById('hitokoto');
+	  var fromm=document.getElementById("from")
+	  fromm.innerText=data.from;
+      hitokoto.innerText = data.hitokoto;
+    }
+  }
+  xhr.send();
+</script>
+<hr>
 <p>作者联系方式:high20212021@outlook.com</p>
+<p>感谢知乎大神给出的一言API</p>
